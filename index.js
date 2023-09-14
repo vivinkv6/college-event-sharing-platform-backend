@@ -4,12 +4,16 @@ const express=require("express");
 const mongoose=require('mongoose');
 const cors=require('cors');
 const app=express();
+const registerEventRouter=require('./routes/registerEventRouter');
 
 //middleware
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.json());
 app.use(cors());
 
+//routes
+
+app.use('/create',registerEventRouter);
 
 //server start
 
