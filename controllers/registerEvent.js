@@ -7,6 +7,7 @@ const registerEventController = async (req, res) => {
     title,
     college,
     place,
+    locationUrl,
     type,
     description,
     banner,
@@ -21,6 +22,7 @@ const registerEventController = async (req, res) => {
       title == " " ||
       college == " " ||
       place == " " ||
+      locationUrl == " " ||
       type == " " ||
       description == " " ||
       banner == " " ||
@@ -40,6 +42,7 @@ const registerEventController = async (req, res) => {
       documents,
       end_date,
       place,
+      locationUrl,
       sponsors,
       start_date,
       type,
@@ -49,10 +52,10 @@ const registerEventController = async (req, res) => {
       return res.json({ err: "Event Registration Failed" });
     }
 
-    res.json({msg:"Event Successfully Registered"});
+    res.json({ msg: "Event Successfully Registered" });
   } catch (error) {
     res.json({ err: error.message });
   }
 };
 
-module.exports=registerEventController;
+module.exports = registerEventController;

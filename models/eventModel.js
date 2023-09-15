@@ -17,14 +17,16 @@ const eventSchema = new schema({
     }),
   },
   place: {
-    type: Object({
-      placeName: String,
-      locationUrl: String,
-    }),
+    type: String,
+    required: true,
+  },
+  locationUrl: {
+    type: String,
     required: true,
   },
   type: {
     type: String,
+    required:true
   },
   description: {
     type: String,

@@ -4,7 +4,11 @@ const express=require("express");
 const mongoose=require('mongoose');
 const cors=require('cors');
 const app=express();
+
+//router
 const registerEventRouter=require('./routes/registerEventRouter');
+const categoryRouter=require('./routes/categoryEventRouter');
+const locationRouter=require('./routes/locationEventRouter');
 
 //middleware
 app.use(bodyParser.urlencoded({extended:false}));
@@ -14,6 +18,8 @@ app.use(cors());
 //routes
 
 app.use('/create',registerEventRouter);
+app.use('/category',categoryRouter);
+app.use('/location',locationRouter);
 
 //server start
 
