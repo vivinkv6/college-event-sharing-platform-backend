@@ -9,6 +9,7 @@ const app=express();
 const registerEventRouter=require('./routes/registerEventRouter');
 const categoryRouter=require('./routes/categoryEventRouter');
 const locationRouter=require('./routes/locationEventRouter');
+const signUpRouter=require('./routes/signupRouter');
 
 //middleware
 app.use(bodyParser.urlencoded({extended:false}));
@@ -20,6 +21,7 @@ app.use(cors());
 app.use('/create',registerEventRouter);
 app.use('/category',categoryRouter);
 app.use('/location',locationRouter);
+app.use('/signup',signUpRouter);
 
 //server start
 
