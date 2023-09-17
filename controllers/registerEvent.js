@@ -15,25 +15,11 @@ const registerEventController = async (req, res) => {
     end_date,
     documents,
     sponsors,
+    coordinator
   } = req.body;
 
   try {
-    if (
-      title == " " ||
-      college == " " ||
-      place == " " ||
-      locationUrl == " " ||
-      type == " " ||
-      description == " " ||
-      banner == " " ||
-      start_date == " " ||
-      end_date == " " ||
-      documents == " " ||
-      sponsors == " "
-    ) {
-      return res.json({ err: "Please fill all the details" });
-    }
-
+   
     const result = await event.create({
       title,
       banner,
@@ -46,6 +32,7 @@ const registerEventController = async (req, res) => {
       sponsors,
       start_date,
       type,
+      coordinator
     });
 
     if (!result) {

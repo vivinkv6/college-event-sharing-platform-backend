@@ -55,6 +55,12 @@ const eventSchema = new schema({
       sponsorLogo: String,
     }),
   },
+  coordinator:{
+    type:Array({
+      name:String,
+      mob:String
+    })
+  }
 });
 
 module.exports = mongoose.model("event", eventSchema);

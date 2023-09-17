@@ -10,6 +10,7 @@ const registerEventRouter=require('./routes/registerEventRouter');
 const categoryRouter=require('./routes/categoryEventRouter');
 const locationRouter=require('./routes/locationEventRouter');
 const signUpRouter=require('./routes/signupRouter');
+const loginRouter=require('./routes/loginRouter');
 
 //middleware
 app.use(bodyParser.urlencoded({extended:false}));
@@ -22,6 +23,7 @@ app.use('/create',registerEventRouter);
 app.use('/category',categoryRouter);
 app.use('/location',locationRouter);
 app.use('/signup',signUpRouter);
+app.use('/login',loginRouter)
 
 //server start
 
